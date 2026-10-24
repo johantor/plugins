@@ -54,7 +54,7 @@ styles live in `docs/plugins.css`.
 
 Name a branch for what it changes: `<type>/<issue>-<slug>`, with the Conventional Commits type
 and a slug of three to five words, such as `fix/12-board-description-mismatch`. With no issue,
-drop `<issue>-`: `docs/branch-naming`. A generated name such as `claude/vigilant-keller-vvje0k`
+drop `<issue>-`: `docs/readme-branch-naming`. A generated name such as `claude/vigilant-keller-vvje0k`
 says nothing in the branch list; rename it before you push. crew and board use the same rule.
 
 ## License
