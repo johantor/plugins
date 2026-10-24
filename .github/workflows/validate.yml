@@ -24,7 +24,8 @@ jobs:
           m=.claude-plugin/marketplace.json
           jq -e '.name and .owner.name and (.plugins | length > 0)' "$m" >/dev/null
           fail=0
-          while IFS=$'\t' read -r name kind repo path desc; do
+          # \x1f, not a tab: read collapses empty whitespace-separated fields (board has no path).
+          while IFS=$'\x1f' read -r name kind repo path desc; do
             case "$kind" in
               github) url="https://raw.githubusercontent.com/$repo/HEAD/.claude-plugin/plugin.json" ;;
               git-subdir) url="https://raw.githubusercontent.com/$repo/HEAD/$path/.claude-plugin/plugin.json" ;;
@@ -38,5 +39,5 @@ jobs:
             else
               echo "ok:   $name"
             fi
-          done < <(jq -r '.plugins[] | [.name, .source.source, (.source.repo // .source.url), (.source.path // ""), .description] | @tsv' "$m")
+          done < <(jq -r '.plugins[] | [.name, .source.source, (.source.repo // .source.url), (.source.path // ""), .description] | join("\u001f")' "$m")
           exit "$fail"
