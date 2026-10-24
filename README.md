@@ -52,6 +52,11 @@ The site is `docs/`, served by GitHub Pages from `main`. `docs/style.css` is a c
 site's stylesheet (`johantor/crew`, `docs/style.css`), so keep the two in step; marketplace-only
 styles live in `docs/plugins.css`.
 
+Name a branch for what it changes: `<type>/<issue>-<slug>`, with the Conventional Commits type
+and a slug of three to five words, such as `fix/12-board-description-mismatch`. With no issue,
+drop `<issue>-`: `docs/branch-naming`. A generated name such as `claude/vigilant-keller-vvje0k`
+says nothing in the branch list; rename it before you push. crew and board use the same rule.
+
 ## License
 
 [Apache-2.0](LICENSE). The plugins collect no data and send nothing to the maintainers. An
