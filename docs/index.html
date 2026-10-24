@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>johantor — Claude Code plugins: crew and board</title>
+<meta name="description" content="The johantor Claude Code plugin marketplace: crew, an agent team for Optimizely work, and board, a local kanban board of every Claude Code session.">
+<link rel="canonical" href="https://johantor.github.io/plugins/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="johantor — Claude Code plugins: crew and board">
+<meta property="og:description" content="Two Claude Code plugins, one marketplace: crew ships the work, board shows every session.">
+<meta property="og:url" content="https://johantor.github.io/plugins/">
+<meta property="og:image" content="https://johantor.github.io/crew/solo-vs-crew.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f3bff'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-weight='900' font-size='17' fill='white'%3Ej%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="plugins.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">johantor<i>.</i></span>
+    <ul>
+      <li><a href="#plugins">Plugins</a></li>
+      <li><a href="#together">Together</a></li>
+      <li><a href="#manage">Manage</a></li>
+      <li><a href="https://github.com/johantor/plugins">GitHub&nbsp;↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Claude Code plugin marketplace</div>
+    <h1>Work in Claude Code like a <em>team.</em></h1>
+    <p class="lede">Two plugins, one marketplace. <strong>crew</strong> splits a feature into planned
+      lanes behind one review gate. <strong>board</strong> shows every session on your machine, so
+      you see which one needs you.</p>
+
+    <div class="install" id="install">
+<pre id="cmd"><span class="p">$ </span>claude plugin marketplace add johantor/plugins
+<span class="p">$ </span>claude plugin install crew@johantor
+<span class="p">$ </span>claude plugin install board@johantor</pre>
+      <button class="copy" id="copy" type="button">Copy commands</button>
+    </div>
+    <p class="hint">Install one or both. Or run <code>/plugin</code> in Claude Code and open <b>Discover</b>.</p>
+
+    <div class="cta">
+      <a class="btn primary" href="#plugins">See the plugins</a>
+      <a class="btn" href="https://github.com/johantor/plugins">Catalog on GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="plugins">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">The plugins</div>
+      <h2>Pick what you need.</h2>
+      <p>Each plugin lives in its own repository, with its own site, releases and changelog.</p>
+    </div>
+    <div class="picks">
+      <article class="pick">
+        <span class="brand">crew<i>.</i></span>
+        <p>An agent team for Optimizely work. A <code>lead</code> plans the work and delegates each
+          step to specialists that know the CMS they work in.</p>
+        <ul class="checks">
+          <li><b>Specialists per lane.</b> Backend, frontend, tests, design, review and more.</li>
+          <li><b>Hooks, not promises.</b> Guardrails in code keep each worker in its lane.</li>
+          <li><b>One review gate.</b> Nothing ships until it says go. It pays down tech debt too.</li>
+        </ul>
+<pre><span class="p">$ </span>claude plugin install crew@johantor</pre>
+        <div class="cta">
+          <a class="btn primary" href="https://johantor.github.io/crew/">Meet crew</a>
+          <a class="btn" href="https://github.com/johantor/crew">Source</a>
+        </div>
+      </article>
+      <article class="pick">
+        <span class="brand">board<i>.</i></span>
+        <p>A local kanban board of every Claude Code session: what needs you, what is running, and
+          what you closed today.</p>
+        <ul class="checks">
+          <li><b>Needs me first.</b> Permission prompts and questions move to the front.</li>
+          <li><b>Back in with one click.</b> Copy resume copies the command to reopen a session.</li>
+          <li><b>Local only.</b> A Node server on 127.0.0.1. Nothing is sent anywhere.</li>
+        </ul>
+<pre><span class="p">$ </span>claude plugin install board@johantor</pre>
+        <div class="cta">
+          <a class="btn primary" href="https://johantor.github.io/board/">Meet board</a>
+          <a class="btn" href="https://github.com/johantor/board">Source</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="together">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <h2>Better together.</h2>
+        <p>Sessions that run a <code>crew:</code> agent get a Crew badge on the board, and each
+          subagent shows on the card with its current tool.</p>
+      </div>
+      <a class="btn primary" href="#install">Install both</a>
+    </div>
+  </div>
+</section>
+
+<section id="manage">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Manage</div>
+      <h2>Update and remove.</h2>
+    </div>
+    <ul class="cmds">
+      <li><code>claude plugin marketplace update johantor</code><span>Refresh the catalog.</span></li>
+      <li><code>claude plugin update crew@johantor</code><span>Update a plugin. The same for <code>board@johantor</code>.</span></li>
+      <li><code>claude plugin uninstall crew@johantor</code><span>Remove a plugin.</span></li>
+    </ul>
+    <p class="note">Added the marketplace from <code>johantor/crew</code> before? That source is gone.
+      Run <code>claude plugin marketplace remove johantor</code>, then the <a href="#install">install commands</a>. Removing a
+      marketplace uninstalls its plugins, so install them again.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks">
+      <a href="https://github.com/johantor/plugins">Marketplace</a>
+      <a href="https://johantor.github.io/crew/">crew</a>
+      <a href="https://johantor.github.io/board/">board</a>
+    </div>
+    <p class="fine">Apache-2.0. The plugins collect no data and send nothing to the maintainers.</p>
+    <p class="fine">An independent project. Not affiliated with or endorsed by Optimizely or Anthropic.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('copy').addEventListener('click', function () {
+    const text = document.getElementById('cmd').innerText.replace(/^\$ /gm, '').trim();
+    const done = (ok) => {
+      if (!ok) {
+        // No clipboard access: select the commands so the platform's copy shortcut works.
+        const range = document.createRange();
+        range.selectNodeContents(document.getElementById('cmd'));
+        getSelection().removeAllRanges();
+        getSelection().addRange(range);
+      }
+      this.textContent = ok ? 'Copied' : 'Selected: copy with your shortcut';
+      setTimeout(() => { this.textContent = 'Copy commands'; }, 2400);
+    };
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(text).then(() => done(true), () => done(false));
+    } else {
+      done(false);
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+  /* Marketplace-only layouts. style.css stays an exact copy of the crew site's, so additions live here. */
+
+  /* plugins: one card per plugin */
+  .picks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .pick{min-width:0;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);
+        border-radius:24px;padding:32px 32px 28px}
+  .pick .brand{font-size:34px}
+  .pick > p{margin:14px 0 0;color:var(--muted)}
+  .pick .checks{margin:20px 0 28px}
+  .pick pre{margin:auto 0 22px;background:var(--term);border-radius:14px;padding:14px 18px;
+            font:13.5px/1.8 var(--mono);color:#e8e8f4;overflow-x:auto}
+  .pick .p{color:#8c93ff;user-select:none}
+  .pick .cta{margin-top:0}
+
+  @media (max-width:900px){.picks{grid-template-columns:1fr}}
+  @media (max-width:640px){.pick{padding:24px}}
