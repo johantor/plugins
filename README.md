@@ -31,6 +31,9 @@ claude plugin install crew@johantor   # and board@johantor
 
 ## Maintaining
 
+Each plugin lives in the `plugin/` folder of its repository, and the entries install that folder
+only (`git-subdir`), so a repo's site and tooling never reach users.
+
 A plugin entry's `name` and `description` copy the plugin's own `plugin.json`, which is
 canonical. CI (`validate.yml`) fetches each `plugin.json` from its repository and fails on a
 mismatch, so update the entry here when a plugin changes its description.
