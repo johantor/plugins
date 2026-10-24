@@ -1,0 +1,42 @@
+name: Validate
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  # Plugins change their plugin.json in their own repos; a weekly run catches drift.
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions: {}
+
+jobs:
+  marketplace:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Entries match each plugin's own plugin.json
+        run: |
+          set -euo pipefail
+          m=.claude-plugin/marketplace.json
+          jq -e '.name and .owner.name and (.plugins | length > 0)' "$m" >/dev/null
+          fail=0
+          while IFS=$'\t' read -r name kind repo path desc; do
+            case "$kind" in
+              github) url="https://raw.githubusercontent.com/$repo/HEAD/.claude-plugin/plugin.json" ;;
+              git-subdir) url="https://raw.githubusercontent.com/$repo/HEAD/$path/.claude-plugin/plugin.json" ;;
+              *) echo "FAIL: $name: unsupported source '$kind'"; fail=1; continue ;;
+            esac
+            manifest="$(curl -fsSL "$url")" || { echo "FAIL: $name: cannot fetch $url"; fail=1; continue; }
+            if [ "$(jq -r .name <<<"$manifest")" != "$name" ]; then
+              echo "FAIL: $name: plugin.json name differs"; fail=1
+            elif [ "$(jq -r '.description // ""' <<<"$manifest")" != "$desc" ]; then
+              echo "FAIL: $name: description differs from plugin.json (copy it here)"; fail=1
+            else
+              echo "ok:   $name"
+            fi
+          done < <(jq -r '.plugins[] | [.name, .source.source, (.source.repo // .source.url), (.source.path // ""), .description] | @tsv' "$m")
+          exit "$fail"
