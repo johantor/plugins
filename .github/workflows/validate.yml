@@ -24,7 +24,7 @@ jobs:
           m=.claude-plugin/marketplace.json
           jq -e '.name and .owner.name and (.plugins | length > 0)' "$m" >/dev/null
           fail=0
-          # \x1f, not a tab: read collapses empty whitespace-separated fields (board has no path).
+          # \x1f, not a tab: read collapses empty whitespace-separated fields (a github source has no path).
           while IFS=$'\x1f' read -r name kind repo path desc; do
             case "$kind" in
               github) url="https://raw.githubusercontent.com/$repo/HEAD/.claude-plugin/plugin.json" ;;
