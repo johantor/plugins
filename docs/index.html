@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>johantor — Claude Code plugins: crew and board</title>
-<meta name="description" content="The johantor Claude Code plugin marketplace: crew, an agent team for Optimizely work, and board, a local kanban board of every Claude Code session.">
+<title>johantor — Claude Code plugins: crew, board and brain</title>
+<meta name="description" content="The johantor Claude Code plugin marketplace: crew, an agent team for Optimizely work, board, a local kanban board of every Claude Code session, and brain, which learns from every session.">
 <link rel="canonical" href="https://johantor.github.io/plugins/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="johantor — Claude Code plugins: crew and board">
-<meta property="og:description" content="Two Claude Code plugins, one marketplace: crew ships the work, board shows every session.">
+<meta property="og:title" content="johantor — Claude Code plugins: crew, board and brain">
+<meta property="og:description" content="Three Claude Code plugins, one marketplace: crew ships the work, board shows every session, brain learns from them.">
 <meta property="og:url" content="https://johantor.github.io/plugins/">
 <meta property="og:image" content="https://johantor.github.io/crew/solo-vs-crew.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -34,17 +34,18 @@
   <div class="wrap">
     <div class="eyebrow">Claude Code plugin marketplace</div>
     <h1>Work in Claude Code like a <em>team.</em></h1>
-    <p class="lede">Two plugins, one marketplace. <strong>crew</strong> splits a feature into planned
+    <p class="lede">Three plugins, one marketplace. <strong>crew</strong> splits a feature into planned
       lanes behind one review gate. <strong>board</strong> shows every session on your machine, so
-      you see which one needs you.</p>
+      you see which one needs you. <strong>brain</strong> learns from every session.</p>
 
     <div class="install" id="install">
 <pre id="cmd"><span class="p">$ </span>claude plugin marketplace add johantor/plugins
 <span class="p">$ </span>claude plugin install crew@johantor
-<span class="p">$ </span>claude plugin install board@johantor</pre>
+<span class="p">$ </span>claude plugin install board@johantor
+<span class="p">$ </span>claude plugin install brain@johantor</pre>
       <button class="copy" id="copy" type="button">Copy commands</button>
     </div>
-    <p class="hint">Install one or both. Or run <code>/plugin</code> in Claude Code and open <b>Discover</b>.</p>
+    <p class="hint">Install any of them. Or run <code>/plugin</code> in Claude Code and open <b>Discover</b>.</p>
 
     <div class="cta">
       <a class="btn primary" href="#plugins">See the plugins</a>
@@ -91,6 +92,21 @@
           <a class="btn" href="https://github.com/johantor/board">Source</a>
         </div>
       </article>
+      <article class="pick">
+        <span class="brand">brain<i>.</i></span>
+        <p>Learns from every Claude Code session. The first phase records what went wrong in each
+          session: no model runs yet, and nothing is loaded into a session.</p>
+        <ul class="checks">
+          <li><b>Signals, not output.</b> Prompts, failing calls, denials and interrupts. Tool output is never stored.</li>
+          <li><b>Scrubbed first.</b> Secrets, paths, hosts and project names go before anything is saved.</li>
+          <li><b>Local only.</b> One SQLite file in your home folder, readable by you alone.</li>
+        </ul>
+<pre><span class="p">$ </span>claude plugin install brain@johantor</pre>
+        <div class="cta">
+          <a class="btn primary" href="https://github.com/johantor/brain">Source</a>
+          <a class="btn" href="https://github.com/johantor/plugins/issues/5">Design</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -131,6 +147,7 @@
       <a href="https://github.com/johantor/plugins">Marketplace</a>
       <a href="https://johantor.github.io/crew/">crew</a>
       <a href="https://johantor.github.io/board/">board</a>
+      <a href="https://github.com/johantor/brain">brain</a>
     </div>
     <p class="fine">Apache-2.0. The plugins collect no data and send nothing to the maintainers.</p>
     <p class="fine">An independent project. Not affiliated with or endorsed by Optimizely or Anthropic.</p>

@@ -8,6 +8,7 @@ own repository.
 claude plugin marketplace add johantor/plugins
 claude plugin install crew@johantor
 claude plugin install board@johantor
+claude plugin install brain@johantor
 ```
 
 You can also install from the UI: run `/plugin` in Claude Code and browse to **Discover**.
@@ -18,6 +19,7 @@ Site: <https://johantor.github.io/plugins/>
 |---|---|---|
 | `crew` | A `lead` agent plans the work and delegates each step to specialists, behind hook-enforced guardrails and one review gate. | [johantor/crew](https://github.com/johantor/crew) |
 | `board` | A local kanban board of every Claude Code session: what needs you, what is running, what you closed today. | [johantor/board](https://github.com/johantor/board) |
+| `brain` | Learns from every Claude Code session. Phase 1 records each session's signals locally; no model runs yet. | [johantor/brain](https://github.com/johantor/brain) |
 
 ## Updating and uninstalling
 
@@ -36,7 +38,7 @@ plugins, so install the ones you use again:
 ```bash
 claude plugin marketplace remove johantor
 claude plugin marketplace add johantor/plugins
-claude plugin install crew@johantor   # and board@johantor
+claude plugin install crew@johantor   # and board@johantor, brain@johantor
 ```
 
 ## Maintaining
@@ -56,7 +58,7 @@ styles live in `docs/plugins.css`.
 Name a branch for what it changes: `<type>/<issue>-<slug>`, with the Conventional Commits type
 and a slug of three to five words, such as `fix/12-board-description-mismatch`. With no issue,
 drop `<issue>-`: `docs/readme-branch-naming`. A generated name such as `claude/vigilant-keller-vvje0k`
-says nothing in the branch list; rename it before you push. crew and board use the same rule.
+says nothing in the branch list; rename it before you push. crew, board and brain use the same rule.
 
 ## License
 
