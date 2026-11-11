@@ -19,7 +19,7 @@ Site: <https://johantor.github.io/plugins/>
 |---|---|---|
 | `crew` | A `lead` agent plans the work and delegates each step to specialists, behind hook-enforced guardrails and one review gate. | [johantor/crew](https://github.com/johantor/crew) |
 | `board` | A local kanban board of every Claude Code session: what needs you, what is running, what you closed today. | [johantor/board](https://github.com/johantor/board) |
-| `brain` | Learns from every Claude Code session. Phase 1 records each session's signals locally; no model runs yet. | [johantor/brain](https://github.com/johantor/brain) |
+| `brain` | Learns from every Claude Code session: records its friction locally, answers questions about it, and drafts lessons in shadow mode. | [johantor/brain](https://github.com/johantor/brain) |
 
 ## Updating and uninstalling
 
