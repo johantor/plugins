@@ -30,7 +30,7 @@
         "url": "https://github.com/johantor/brain.git",
         "path": "plugin"
       },
-      "description": "Learns from every Claude Code session. Hooks record each session's prompts, failing tool calls, denied permissions, interrupts and token use to a local SQLite file, scrubbed. Reflection (off by default) drafts lessons from your corrections; loading (off by default) puts them in each session, scores them by holdout, retires the ones that do not help, and turns three on one tool into a skill. /brain:report shows the records."
+      "description": "Learns from every Claude Code session. Hooks record each session's prompts, failing tool calls, denied permissions, interrupts and token use to a local SQLite file, scrubbed. Reflection (off by default) drafts lessons from your corrections; loading (off by default) puts them in each session, where you forget or pin each one, and turns three on one tool into a skill. /brain:report shows the records."
     }
   ]
 }
